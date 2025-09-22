@@ -1,0 +1,25 @@
+# Maven / builds
+target/
+dist/
+build/
+*.class
+*.log
+
+# IDE
+.nb-gradle/
+nbproject/private/
+.idea/
+.vscode/
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Media pesada de tareas antiguas
+Practicas/Practica01/MiPagina/media/
+*.zip
+*.exe
+*.mp4
+*.mov
+*.avi
+EOF

@@ -1,0 +1,34 @@
+/* Estilo a etiquetas */
+body {
+  background-color: #f0f8ff;
+  font-family: Verdana, sans-serif;
+}
+
+header {
+  background-color: teal;
+  color: white;
+  padding: 15px;
+}
+
+/* Estilo a clases */
+.subtitulo {
+  color: darkgreen;
+  font-weight: bold;
+}
+
+/* Estilo a IDs */
+#titulo-historia {
+  text-align: center;
+  color: maroon;
+}
+
+#titulo-tecnicas {
+  text-align: center;
+  color: navy;
+}
+
+#footer-historia, #footer-tecnicas {
+  background-color: lightgray;
+  text-align: center;
+  padding: 8px;
+}

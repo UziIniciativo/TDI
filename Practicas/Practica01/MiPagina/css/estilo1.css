@@ -1,0 +1,36 @@
+/* Estilo a etiquetas */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: navy;
+  color: white;
+  padding: 10px;
+}
+
+/* Estilo a clases */
+.subtitulo {
+  color: darkblue;
+  text-decoration: underline;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilo a IDs */
+#titulo {
+  font-size: 2em;
+  text-align: center;
+}
+
+#footer {
+  background-color: lightgray;
+  text-align: center;
+  padding: 10px;
+}
