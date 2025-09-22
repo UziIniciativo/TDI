@@ -1,5 +1,5 @@
 # Maven / builds
-target/
+**/target/
 dist/
 build/
 *.class
