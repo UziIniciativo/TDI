@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen del crédito</title>
+  <style>
+    body{font-family:system-ui, Arial; margin:2rem;}
+    table{border-collapse:collapse; min-width:520px}
+    th, td{border:1px solid #ccc; padding:.5rem;}
+    th{background:#f4f4f4; text-align:left;}
+    a{display:inline-block; margin-top:1rem;}
+  </style>
+</head>
+<body>
+<h2>Campos capturados</h2>
+
+<table>
+  <tr><th>Campo</th><th>Valor</th></tr>
+  <tr><td>ID</td><td th:text="${credito.id}">1</td></tr>
+  <tr><td>Fecha</td><td th:text="${credito.fecha}"></td></tr>
+  <tr><td>Moneda</td><td th:text="${credito.moneda}"></td></tr>
+  <tr><td>Monto</td><td th:text="${credito.monto}"></td></tr>
+  <tr><td>Periodo (meses)</td><td th:text="${credito.periodoMeses}"></td></tr>
+  <tr><td>Cuota</td><td th:text="${credito.cuota}"></td></tr>
+  <tr><td>TEA (%)</td><td th:text="${credito.tea}"></td></tr>
+  <tr><td>Fecha vencimiento</td><td th:text="${credito.fechaVenc}"></td></tr>
+</table>
+
+<a th:href="@{/}">← Capturar de nuevo</a>
+&nbsp;|&nbsp;
+<a th:href="@{/creditos}">Ver todos</a>
+</body>
+</html>
