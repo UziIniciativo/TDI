@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.unam.tdi</groupId>
-	<artifactId>tarea02</artifactId>
+	<artifactId>tarea03</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tarea03</name>
 	<description>Tarea 3 - Creditos con tabla de pagos </description>
@@ -60,6 +60,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.46.0.0</version>
+        </dependency>
+
+		<dependency>
+        	<groupId>org.hibernate.orm</groupId>
+        	<artifactId>hibernate-community-dialects</artifactId>
+    	</dependency>
+
 	</dependencies>
 
 	<build>

@@ -1,4 +1,4 @@
-package edu.unam.tdi.tarea02.model;
+package edu.unam.tdi.tarea03.model;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;

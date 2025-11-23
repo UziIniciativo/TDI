@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: base('Resumen del crédito y pagos', ~{::body})}">
 <head>
   <meta charset="UTF-8">
-  <title>Resumen del crédito</title>
-  <style>
-    body{font-family:system-ui, Arial; margin:2rem;}
-    table{border-collapse:collapse; min-width:520px}
-    th, td{border:1px solid #ccc; padding:.5rem;}
-    th{background:#f4f4f4; text-align:left;}
-    a{display:inline-block; margin-top:1rem;}
-  </style>
+  <title>Resumen</title>
 </head>
 <body>
-<h2>Campos capturados</h2>
 
-<table>
-  <tr><th>Campo</th><th>Valor</th></tr>
-  <tr><td>ID</td><td th:text="${credito.id}">1</td></tr>
-  <tr><td>Fecha</td><td th:text="${credito.fecha}"></td></tr>
-  <tr><td>Moneda</td><td th:text="${credito.moneda}"></td></tr>
-  <tr><td>Monto</td><td th:text="${credito.monto}"></td></tr>
-  <tr><td>Periodo (meses)</td><td th:text="${credito.periodoMeses}"></td></tr>
-  <tr><td>Cuota</td><td th:text="${credito.cuota}"></td></tr>
-  <tr><td>TEA (%)</td><td th:text="${credito.tea}"></td></tr>
-  <tr><td>Fecha vencimiento</td><td th:text="${credito.fechaVenc}"></td></tr>
+<h2 class="h5">Datos del crédito capturado</h2>
+
+<table class="table table-sm table-bordered w-auto">
+  <tbody>
+    <tr><th class="table-light">ID</th><td th:text="${credito.id}"></td></tr>
+    <tr><th class="table-light">Fecha</th><td th:text="${credito.fecha}"></td></tr>
+    <tr><th class="table-light">Moneda</th><td th:text="${credito.moneda}"></td></tr>
+    <tr><th class="table-light">Monto</th><td th:text="${credito.monto}"></td></tr>
+    <tr><th class="table-light">Periodo (meses)</th><td th:text="${credito.periodoMeses}"></td></tr>
+    <tr><th class="table-light">Cuota</th><td th:text="${credito.cuota}"></td></tr>
+    <tr><th class="table-light">TEA (%)</th><td th:text="${credito.tea}"></td></tr>
+    <tr><th class="table-light">Fecha vencimiento</th><td th:text="${credito.fechaVenc}"></td></tr>
+  </tbody>
 </table>
 
-<a th:href="@{/}">← Capturar de nuevo</a>
-&nbsp;|&nbsp;
-<a th:href="@{/creditos}">Ver todos</a>
+<h2 class="h5 mt-4">Pagos registrados por tarjeta</h2>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>Fecha</th>
+        <th>Mes</th>
+        <th>Tarjeta</th>
+        <th>Transacción</th>
+        <th>Gastos</th>
+        <th>Pago registrado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="mov : ${movimientos}">
+        <td th:text="${mov.fecha}"></td>
+        <td th:text="${mov.mes}"></td>
+        <td th:text="${mov.tarjeta}"></td>
+        <td th:text="${mov.transaccion}"></td>
+        <td th:text="${mov.gastos}"></td>
+        <td th:text="${mov.pagos != null ? mov.pagos : '-'}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<a th:href="@{/}" class="btn btn-secondary mt-3">← Capturar otro crédito</a>
+
 </body>
 </html>
